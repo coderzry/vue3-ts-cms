@@ -1,6 +1,8 @@
 import { createApp } from 'vue'
 
 // import { globalRegister } from './global'
+import 'normalize.css'
+import './assets/css/index.less'
 
 import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
@@ -23,7 +25,7 @@ app.use(store)
 
 app.mount('#app')
 
-// HYRequest.request({
-//   url: '/home/multidata',
-//   method: 'GET'
-// })
+HYRequest.request({
+  url: '/home/multidata',
+  method: 'GET'
+})

@@ -1,11 +1,5 @@
 <template>
   <div class="app">
-    <h2>{{ $store.state.name }}</h2>
-    <router-link to="/login">登录</router-link>
-    <router-link to="/main">主页</router-link>
-    <div>
-      <el-button type="primary">111</el-button>
-    </div>
     <router-view></router-view>
   </div>
 </template>
@@ -15,17 +9,21 @@ import { defineComponent } from 'vue'
 
 export default defineComponent({
   name: 'App',
+  props: {
+    name: {
+      type: String,
+      default: 'vue'
+    }
+  },
+  setup(props) {
+    props.name
+  },
   components: {}
 })
 </script>
 
 <style lang="less">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+.app {
+  height: 100%;
 }
 </style>
