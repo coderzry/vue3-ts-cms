@@ -7,13 +7,13 @@ import './assets/css/index.less'
 import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
 
-// import './service/axios.demo'
 import HYRequest from './service'
 
 import App from './App.vue'
 
 import router from './router'
 import store from './store'
+import { setupStore } from './store'
 
 const app = createApp(App)
 
@@ -22,10 +22,11 @@ const app = createApp(App)
 app.use(ElementPlus)
 app.use(router)
 app.use(store)
+setupStore()
 
 app.mount('#app')
 
-HYRequest.request({
-  url: '/home/multidata',
-  method: 'GET'
-})
+// HYRequest.request({
+//   url: '/home/multidata',
+//   method: 'GET'
+// })
