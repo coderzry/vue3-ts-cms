@@ -7,6 +7,7 @@ import {
   requestUserMenusByRoleId
 } from '@/service/login/login'
 import localCache from '@/utils/cache'
+import { mapMenusToRoutes } from '@/utils/map-menus'
 
 import { IRootState } from '../types'
 import { ILoginState } from './types'
@@ -31,6 +32,12 @@ const loginModule: Module<ILoginState, IRootState> = {
     },
     changeUserMenus(state, userMenus: any) {
       state.userMenus = userMenus
+      // userMenus: 将菜单数据转换为路由数据
+      const routes = mapMenusToRoutes(userMenus)
+      // 将路由数据注册到路由中 main.children
+      routes.forEach((route) => {
+        router.addRoute('main', route)
+      })
     }
   },
   actions: {

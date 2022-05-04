@@ -8,7 +8,9 @@
         <el-header class="page-header">
           <nav-header @foldChange="handleFoldChange" />
         </el-header>
-        <el-main class="page-content">Main</el-main>
+        <el-main class="page-content">
+          <router-view></router-view>
+        </el-main>
       </el-container>
     </el-container>
   </div>
@@ -17,12 +19,12 @@
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
 import NavMenu from '@/components/nav-menu'
-// import NavHeader from '@/components/nav-header'
+import NavHeader from '@/components/nav-header'
 
 export default defineComponent({
   components: {
-    NavMenu
-    // NavHeader
+    NavMenu,
+    NavHeader
   },
   setup() {
     const isCollapse = ref(false)
