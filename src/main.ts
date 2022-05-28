@@ -24,9 +24,9 @@ for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
 // 注册element-plus
 // app.use(globalRegister)
 app.use(ElementPlus)
-app.use(router)
 app.use(store)
 setupStore()
+app.use(router)
 
 app.mount('#app')
 
