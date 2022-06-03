@@ -8,7 +8,7 @@ import './assets/css/index.less'
 import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
 
-import HYRequest from './service'
+// import HYRequest from './service'
 
 import App from './App.vue'
 
