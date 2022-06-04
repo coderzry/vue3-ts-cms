@@ -1,7 +1,7 @@
 import { createApp } from 'vue'
 import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 
-// import { globalRegister } from './global'
+import { globalRegister } from './global'
 import 'normalize.css'
 import './assets/css/index.less'
 
@@ -22,7 +22,7 @@ for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
 }
 
 // 注册element-plus
-// app.use(globalRegister)
+app.use(globalRegister)
 app.use(ElementPlus)
 app.use(store)
 setupStore()
