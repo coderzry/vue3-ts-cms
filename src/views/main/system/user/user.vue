@@ -23,6 +23,12 @@
         <template #updateAt="scope">
           <span>{{ $filters.formatTime(scope.row.updateAt) }}</span>
         </template>
+        <template #handler>
+          <div class="btns-class">
+            <el-button size="small" type="text">删除</el-button>
+            <el-button size="small" type="text">编辑</el-button>
+          </div>
+        </template>
       </HyTable>
     </div>
   </div>
@@ -70,6 +76,11 @@ export default defineComponent({
         label: '更新时间',
         minWidth: '250',
         slotName: 'updateAt'
+      },
+      {
+        label: '操作',
+        minWidth: '150',
+        slotName: 'handler'
       }
     ]
 
