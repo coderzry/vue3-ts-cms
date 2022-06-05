@@ -42,6 +42,10 @@ export default defineComponent({
     const formData = ref(formOriginData)
 
     const handleResetClick = () => {
+      // for (const key in formOriginData) {
+      //   formData.value[`${key}`] = formOriginData[key]
+      // }
+
       formData.value = formOriginData
     }
 
